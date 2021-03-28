@@ -1,0 +1,20 @@
+img
+{
+    height: 210px;
+    width:175px
+}
+.para
+{
+    text-align: center;
+    width: 300px;
+}
+p
+{
+    position: relative;
+    top: 0px;
+}
+a
+{
+    text-decoration: none;
+    color: black;
+}
