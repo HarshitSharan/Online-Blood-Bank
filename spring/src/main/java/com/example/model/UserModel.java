@@ -8,7 +8,6 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name="bbusers")
 public class UserModel implements Serializable {
 
     @Id
