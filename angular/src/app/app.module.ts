@@ -12,6 +12,7 @@ import { ErrorComponent } from './error/error.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { SamplesComponent } from './samples/samples.component'
+import { StatusReportService } from './status-report.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,7 @@ import { SamplesComponent } from './samples/samples.component'
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [StatusReportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

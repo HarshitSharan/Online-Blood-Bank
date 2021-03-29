@@ -35,7 +35,7 @@ export class SamplesComponent implements OnInit {
     {
       sampleGroup :'ab-',
       quantity:20,
-      location: 'Jhumri Teliya,Jharakhand',
+      location: 'Jhumri Teliya,Jharakhand,Jhumri Teliya,Jharakhand,Jhumri Teliya,Jharakhand,Jhumri Teliya,Jharakhand,Jhumri Teliya,Jharakhand',
       mobile:'1234567890',
       id:'2'
 
@@ -46,6 +46,22 @@ export class SamplesComponent implements OnInit {
       location: 'Kolkata,West Bengal',
       mobile:'1234567890',
       id:'45'
+
+    },
+    {
+      sampleGroup :'o+',
+      quantity:14,
+      location: 'jksajfad, jkdsafjafkjs',
+      mobile:'1234567890',
+      id:'43'
+
+    },
+    {
+      sampleGroup :'o+',
+      quantity:14,
+      location: 'jksajfad, jkdsafjafkjs',
+      mobile:'1234567890',
+      id:'43'
 
     },
     {

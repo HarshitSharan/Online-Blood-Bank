@@ -1,18 +1,21 @@
-<div class="container">
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Sample Group</th>
-        <th>No. of Packs</th>
-        <th class="location">Location</th>
-        <th></th>
-    </tr>
-    <tr class="row" *ngFor="let item of sampleList">
-        <td class="id">{{item.id}}.</td>
-        <td class="SampleGroup">{{item.sampleGroup}}</td>
-        <td class="NoOfPacks">{{item.quantity}}pcs</td>
-        <td class="loaction">{{item.location}}</td>
-        <td class="mobile">{{item.mobile}}</td>
-    </tr>
-</table>
-</div>
+
+    <div class="container">
+        <h1>Sample List: </h1>
+        <input type="text">
+      <table cellspacing="0">
+        <tr id="top">
+          <th>ID</th>
+          <th>Sample Group</th>
+          <th>No. of Packs</th>
+          <th class="locat">Location</th>
+          <th></th>
+        </tr>
+        <tr class="row" *ngFor="let item of sampleList">
+          <td class="id">{{item.id}}.</td>
+          <td class="SampleGroup">{{item.sampleGroup}}</td>
+          <td class="NoOfPacks">{{item.quantity}}pcs</td>
+          <td class="loaction">{{item.location}}</td>
+          <td class="mobile">{{item.mobile}}</td>
+        </tr>
+      </table>
+    </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { StatusReportService } from '../status-report.service';
 @Component({
   selector: 'login-detail',
   templateUrl: './login-detail.component.html',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginDetailComponent implements OnInit {
   loginObj:any
   flag:any
-  constructor(private http:HttpClient, private route:Router) { 
+  constructor(private http:HttpClient, private route:Router,private status:StatusReportService) { 
     this.loginObj={
       id: '',
       password:''
@@ -24,9 +25,14 @@ export class LoginDetailComponent implements OnInit {
     if(this.flag.ret)
       this.route.navigateByUrl("/dashboard")
     else
+    {
+      this.status.changeMessage("logFail")
       this.route.navigateByUrl("/login?status=logFail")
+
+    }
   }
   ngOnInit(): void {
+    
 
 
   }
