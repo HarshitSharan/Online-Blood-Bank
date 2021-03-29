@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MainSignupComponent } from './main-signup/main-signup.component';
+import { SamplesComponent } from './samples/samples.component';
 
 const routes: Routes = [
   {path: 'login',component: LoginPageComponent},
   {path:'signup', component: MainSignupComponent},  
+  {path:'sample',component:SamplesComponent},
   {path:'', redirectTo: '/login', pathMatch:'full'},
   {path:'**' ,component: ErrorComponent }
 ];

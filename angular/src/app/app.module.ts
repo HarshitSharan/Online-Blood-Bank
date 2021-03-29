@@ -9,7 +9,9 @@ import { NoAccountComponent } from './no-account/no-account.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { MainSignupComponent } from './main-signup/main-signup.component';
 import { ErrorComponent } from './error/error.component';
-
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { SamplesComponent } from './samples/samples.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,11 +21,15 @@ import { ErrorComponent } from './error/error.component';
     SignUpComponent,
     MainSignupComponent,
     ErrorComponent,
+    SamplesComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule 
+    FlexLayoutModule ,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

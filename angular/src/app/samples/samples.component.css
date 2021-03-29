@@ -1,0 +1,69 @@
+.container
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+table
+{
+    /* border-collapse: collapse; */
+    width: 70%;
+    border:1px black solid; 
+}
+th
+{
+    font-weight: normal;
+    border-bottom: 1px black solid;
+    height:60px;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+td
+{
+    height: 70px;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-top:10px white solid;
+}
+.id
+{
+    width:10%;
+    text-align: center;
+    border-left:10px white solid ;
+}
+.SampleGroup
+{
+    width:20%;
+    text-align: center;
+}
+.NoOfPacks
+{
+    width:20%;
+    text-align: center;
+
+}
+.location
+{
+    width: 40%;
+    text-align: left;
+}
+.mobile
+{
+    width:10%;
+    text-align: left;
+}
+.row
+{
+    background-color: #ffe5e5;
+    margin-right: 0 !importantng ;
+}
+.id
+{
+    border-radius: 20px 0px 0px 20px;
+}
+.mobile
+{
+    border-radius: 0px 20px 20px 0px;
+
+}

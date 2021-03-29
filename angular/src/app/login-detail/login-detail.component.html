@@ -1,9 +1,9 @@
 <div class="box">
 <img id="userImg" src="\assets\Image\login-page\login-detail\user.png" alt="user"><label class="heading">Log In </label>
-<form >
-    <input  type="text" placeholder="Enter User ID"> <br>
+<div class="form" >
+    <input [(ngModel)]="loginObj.id" type="text" placeholder="Enter User ID"> <br>
 
-    <input type="password" placeholder="Enter Password"><br>
-    <button type="submit"><img id="buttonIcon" src="\assets\Image\login-page\login-detail\submitButton.png" alt="Submit"></button>
-</form>
+    <input [(ngModel)]='loginObj.password' type="password" placeholder="Enter Password"><br>
+    <button (click)="sendData()" type="submit"><img id="buttonIcon" src="\assets\Image\login-page\login-detail\submitButton.png" alt="Submit"></button>
+</div>
 </div>

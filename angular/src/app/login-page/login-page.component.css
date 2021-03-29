@@ -9,3 +9,22 @@
     flex-direction: row;
     margin-top: 10px;
 }
+#fail 
+{
+    color: red;
+}
+#logFail
+{
+    color: red;
+}
+#success
+{
+    color: green;
+}
+.msg
+{
+    position: relative;
+    bottom:10px;
+    text-align: center;
+
+}
