@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { SamplesComponent } from './samples/samples.component'
 import { StatusReportService } from './status-report.service';
+import { DonarListComponent } from './donar-list/donar-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { StatusReportService } from './status-report.service';
     MainSignupComponent,
     ErrorComponent,
     SamplesComponent,
+    DonarListComponent,
     
   ],
   imports: [

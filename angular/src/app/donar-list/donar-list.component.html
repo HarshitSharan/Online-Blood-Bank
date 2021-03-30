@@ -5,17 +5,17 @@
       <table cellspacing="0">
         <tr id="top">
           <th>ID</th>
-          <th>Sample Group</th>
-          <th>No. of Packs</th>
-          <th class="locat">Location</th>
+          <th>Name</th>
+          <th>Blood Type</th>
+          <th class="locat">Mobile</th>
           <th></th>
         </tr>
 
-        <tr class="row" *ngFor="let item of sampleList">
+        <tr class="row" *ngFor="let item of donarList">
           <td class="id">{{item.id}}.</td>
-          <td class="SampleGroup">{{item.sampleGroup}}</td>
-          <td class="NoOfPacks">{{item.quantity}}pcs</td>
-          <td class="loaction">{{item.location}}</td>
+          <td class="SampleGroup">{{item.Name}}</td>
+          <td class="NoOfPacks">{{item.bloodType}}</td>
+          <td class="loaction">{{item.mobile}}</td>
           <td class="mobile"><a href="tel:{{item.mobile}}"><img src="" alt="icon"></a></td>
         </tr>
       </table>

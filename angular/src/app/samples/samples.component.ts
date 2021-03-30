@@ -9,15 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SamplesComponent implements OnInit {
   sampleList:any;
-  constructor(private http:HttpClient) { 
-    this.sampleList={
+  keyword:string;
+
+  constructor(private http:HttpClient) 
+  { 
+    let obj={
       sampleGroup :'',
       quantity:0,
       location: '',
       mobile:'',
       id:''
-
     }
+    this.sampleList=[]
+
+    this.keyword=''
+  }
+  search()
+  {
+    this.ngOnInit()
+    if(this.keyword!='')
+    {
+      this.sampleList=this.sampleList.filter((data:any)=>{
+        return data.sampleGroup.toLocaleLowerCase().startsWith(this.keyword.toLocaleLowerCase())
+      })
+    }
+    else
+      this.ngOnInit()
+
   }
 
   ngOnInit(): void {
@@ -57,7 +75,7 @@ export class SamplesComponent implements OnInit {
 
     },
     {
-      sampleGroup :'o+',
+      sampleGroup :'o-',
       quantity:14,
       location: 'jksajfad, jkdsafjafkjs',
       mobile:'1234567890',
