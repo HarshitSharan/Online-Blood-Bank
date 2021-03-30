@@ -14,6 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { SamplesComponent } from './samples/samples.component'
 import { StatusReportService } from './status-report.service';
 import { DonarListComponent } from './donar-list/donar-list.component';
+import { SampleDetailComponent } from './sample-detail/sample-detail.component';
+import { DonarDetailComponent } from './donar-detail/donar-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,8 @@ import { DonarListComponent } from './donar-list/donar-list.component';
     ErrorComponent,
     SamplesComponent,
     DonarListComponent,
+    SampleDetailComponent,
+    DonarDetailComponent,
     
   ],
   imports: [
