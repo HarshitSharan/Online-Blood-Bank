@@ -59,6 +59,7 @@ public class BloodBankController {
     @GetMapping("/sample")
     public List<BloodBankModel> showBloodSample()
     {
+        deleteOldSamples();
         return bankRepo.findAll();
     }
 
