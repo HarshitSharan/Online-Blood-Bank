@@ -4,11 +4,13 @@ import com.example.model.BloodBankModel;
 import com.example.model.BloodDonarModel;
 import com.example.repo.BankRepo;
 import com.example.repo.DonarRepo;
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.time.*;
 
 @RestController
 @RequestMapping
@@ -75,6 +77,21 @@ public class BloodBankController {
         bankRepo.save(sample);
         return true;
 
+    }
+
+    public void deleteOldSamples()
+    {
+        List<BloodBankModel> allSamples=bankRepo.findAll();
+
+        LocalDate today=LocalDate.now();
+        for(BloodBankModel sample:allSamples)
+        {
+            LocalDate submission=LocalDate.parse(sample.getDate());
+            if (Duration.between(today.atStartOfDay(),submission.atStartOfDay()).toDays() >=90 )
+            {
+                bankRepo.deleteBloodBankModelByBloodBankID(sample.getBloodBankID());
+            }
+        }
     }
 }
 
