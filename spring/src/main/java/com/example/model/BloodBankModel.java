@@ -16,7 +16,6 @@ public class BloodBankModel implements Serializable {
     private String PHLevel;
     private int Quantity;
     private String Date; //DDMMYYYY
-    private int days;
     private String mobileNumber;
     private String location;
     private Boolean availability;
@@ -27,14 +26,14 @@ public class BloodBankModel implements Serializable {
 
     }
 
-    public BloodBankModel(String bloodBankID, String bloodGroup, String bloodPressure, String PHLevel, int quantity, String date, int days, String mobileNumber, String location, Boolean availability) {
+    public BloodBankModel(String bloodBankID, String bloodGroup, String bloodPressure, String PHLevel, int quantity, String date, String mobileNumber, String location, Boolean availability) {
         this.bloodBankID = bloodBankID;
         this.bloodGroup = bloodGroup;
         this.bloodPressure = bloodPressure;
         this.PHLevel = PHLevel;
         Quantity = quantity;
         Date = date;
-        this.days = days;
+
         this.mobileNumber = mobileNumber;
         this.location = location;
         this.availability = availability;
@@ -86,14 +85,6 @@ public class BloodBankModel implements Serializable {
 
     public void setDate(String date) {
         Date = date;
-    }
-
-    public int getDays() {
-        return days;
-    }
-
-    public void setDays(int days) {
-        this.days = days;
     }
 
     public String getMobileNumber() {
