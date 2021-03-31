@@ -4,5 +4,6 @@
 ## Project Instructions
 1. The instructions are defined in the  document inside the repository.
 2. You are advised to strictly follow the instructions given in the document.
+3. To run the project clone it.
 
 Happy coding Neos:thumbsup:
