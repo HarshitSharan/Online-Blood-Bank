@@ -1,19 +1,17 @@
 package com.example.controller;
 
+
 import com.example.model.LoginModel;
 import com.example.model.UserModel;
 import com.example.repo.UserRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping
 public class LoginController {
     private final UserRepo userRepo;
 
@@ -23,7 +21,7 @@ public class LoginController {
     }
 
 
-    @PostMapping
+    @PostMapping("/login")
     public boolean checkUser(@RequestBody LoginModel newLogin)
     {
         List<UserModel> allusers= userRepo.findAll();
@@ -37,4 +35,29 @@ public class LoginController {
 
         return false;
     }
+
+    @GetMapping("/UserDetails/{email}")
+    public UserModel sendUserDetails(@PathVariable("email") String email)
+    {
+        UserModel userModel=userRepo.findUserModelByEmail(email);
+        userModel.setPassword(null); //Password not required
+
+        return userModel;
+
+    }
+
+    @PutMapping("/logout")
+    public Boolean logoutUser(@RequestBody String email)
+    {
+        UserModel userModel =userRepo.findUserModelByEmail(email);
+        userModel.setActive(false);
+        userRepo.save(userModel);
+
+        return true;
+    }
+
+
+
+
+
 }

@@ -3,12 +3,16 @@ package com.example.model;
 
 import javax.persistence.Id;
 import javax.persistence.Entity;
-import javax.persistence.Table;
+
 
 import java.io.Serializable;
 
 @Entity
 public class UserModel implements Serializable {
+
+
+    private String FirstName;
+    private String LastName;
 
     @Id
     private String email;
@@ -21,12 +25,31 @@ public class UserModel implements Serializable {
     {
 
     }
-    public UserModel(String email, String password, String mobileNumber, boolean active, String role) {
+
+    public UserModel(String firstName, String lastName, String email, String password, String mobileNumber, boolean active, String role) {
+        FirstName = firstName;
+        LastName = lastName;
         this.email = email;
         this.password = password;
         this.mobileNumber = mobileNumber;
         this.active = active;
         this.role = role;
+    }
+
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
+    }
+
+    public String getLastName() {
+        return LastName;
+    }
+
+    public void setLastName(String lastName) {
+        LastName = lastName;
     }
 
     public String getEmail() {

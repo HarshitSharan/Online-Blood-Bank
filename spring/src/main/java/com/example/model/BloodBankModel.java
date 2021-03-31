@@ -15,17 +15,29 @@ public class BloodBankModel implements Serializable {
     private String bloodPressure;
     private String PHLevel;
     private int Quantity;
+    private String Date; //DDMMYYYY
+    private int days;
+    private String mobileNumber;
+    private String location;
+    private Boolean availability;
+
 
     public BloodBankModel()
     {
 
     }
-    public BloodBankModel(String bloodBankID, String bloodGroup, String bloodPressure, String PHLevel, int quantity) {
+
+    public BloodBankModel(String bloodBankID, String bloodGroup, String bloodPressure, String PHLevel, int quantity, String date, int days, String mobileNumber, String location, Boolean availability) {
         this.bloodBankID = bloodBankID;
         this.bloodGroup = bloodGroup;
         this.bloodPressure = bloodPressure;
         this.PHLevel = PHLevel;
         Quantity = quantity;
+        Date = date;
+        this.days = days;
+        this.mobileNumber = mobileNumber;
+        this.location = location;
+        this.availability = availability;
     }
 
     public String getBloodBankID() {
@@ -66,5 +78,45 @@ public class BloodBankModel implements Serializable {
 
     public void setQuantity(int quantity) {
         Quantity = quantity;
+    }
+
+    public String getDate() {
+        return Date;
+    }
+
+    public void setDate(String date) {
+        Date = date;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public Boolean getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(Boolean availability) {
+        this.availability = availability;
     }
 }

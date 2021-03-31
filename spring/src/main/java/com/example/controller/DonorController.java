@@ -22,7 +22,7 @@ public class DonorController {
 
     //Checked
     @GetMapping("/donor")
-    List<BloodDonarModel> getDonor()
+    public List<BloodDonarModel> getDonor()
     {
         return donarRepo.findAll();
     }
@@ -33,14 +33,15 @@ public class DonorController {
 
     //Checked
     @PutMapping("/admin/donor/{id}")
-    void updateDonar(@RequestBody BloodDonarModel donor)
+    public Boolean updateDonar(@RequestBody BloodDonarModel donor)
     {
         donarRepo.save(donor);
+        return true;
     }
 
     //Checked
     @RequestMapping(value = "/donor/{group:\\bAB\\b[+-]|A[+-]|B[+-]|O[+-]}",method=RequestMethod.GET)
-    List<BloodDonarModel> getDonorByGroup(@PathVariable("group") String group)
+    public List<BloodDonarModel> getDonorByGroup(@PathVariable("group") String group)
     {
 
 
@@ -60,24 +61,26 @@ public class DonorController {
 
     //Checked
     @RequestMapping(value = "/donor/{id:[a-zA-Z0-9]+}",method=RequestMethod.GET)
-    BloodDonarModel getDonorByID(@PathVariable("id")  String id)
+    public BloodDonarModel getDonorByID(@PathVariable("id")  String id)
     {
-        System.out.println("Coming to id");
+
         return donarRepo.findBloodDonarModelById(id);
     }
 
 
     //Checked
     @PostMapping("/admin/addDonor")
-    void addDonar(@RequestBody BloodDonarModel donor)
+    public Boolean addDonar(@RequestBody BloodDonarModel donor)
     {
         donarRepo.save(donor);
+        return true;
     }
 
     @DeleteMapping("/admin/donor/{id}")
-    void removeDonor(@PathVariable("id") String id)
+    public Boolean removeDonor(@PathVariable("id") String id)
     {
         donarRepo.deleteBloodDonarModelById(id);
+        return true;
     }
 
 

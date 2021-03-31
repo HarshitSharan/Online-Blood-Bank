@@ -4,9 +4,6 @@ package com.example.controller;
 import com.example.model.UserModel;
 import com.example.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -34,4 +31,6 @@ public class SignupController {
         return true;
 
     }
+
+
 }

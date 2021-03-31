@@ -1,13 +1,11 @@
 package com.example.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.io.Serializable;
 
-@Entity
+
 public class LoginModel implements Serializable {
 
-    @Id
+
     private String email;
     private String password;
 
