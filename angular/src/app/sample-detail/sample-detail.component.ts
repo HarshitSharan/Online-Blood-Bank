@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-sample-detail',
@@ -12,7 +13,7 @@ export class SampleDetailComponent implements OnInit {
 
   id:any
   data:any;
-  constructor(private route: ActivatedRoute,private http:HttpClient) { 
+  constructor(private route: ActivatedRoute,private http:HttpClient, private logCheck: LoginService) { 
     this.id=''
     this.data=
     {
@@ -27,7 +28,10 @@ export class SampleDetailComponent implements OnInit {
       availablity:'Yes' 
     }
   }
-
+ checkRole()
+ {
+   return this.logCheck.userData.role=='admin'
+ }
   ngOnInit(): void 
   {
     this.id=this.route.snapshot.paramMap.get('id')

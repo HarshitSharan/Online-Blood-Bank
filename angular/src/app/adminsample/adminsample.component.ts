@@ -1,17 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-samples',
-  templateUrl: './samples.component.html',
-  styleUrls: ['./samples.component.css']
+  selector: 'app-adminsample',
+  templateUrl: './adminsample.component.html',
+  styleUrls: ['./adminsample.component.css']
 })
-export class SamplesComponent implements OnInit {
+export class AdminsampleComponent implements OnInit {
   sampleList:any;
   keyword:string;
 
-  constructor(private http:HttpClient) 
+  constructor(private http:HttpClient,private route: Router) 
   { 
     let obj={
       sampleGroup :'',
@@ -24,15 +24,21 @@ export class SamplesComponent implements OnInit {
 
     this.keyword=''
   }
+  addSample()
+  {
+    this.route.navigateByUrl('/admin/addSample');
+    console.log("navigating")
+  }
   search()
   {
     this.ngOnInit()
     if(this.keyword!='')
     {
       this.sampleList=this.sampleList.filter((data:any)=>{
-        return data.sampleGroup.toLocaleLowerCase().startsWith(this.keyword.toLocaleLowerCase())
+        return data.sampleGroup.toLocaleLowerCase().startsWith(this.keyword.toLocaleLowerCase()) || data.id.toLocaleLowerCase().startsWith(this.keyword.toLocaleLowerCase())
       })
     }
+    
     else
       this.ngOnInit()
 
@@ -94,3 +100,4 @@ export class SamplesComponent implements OnInit {
   }
 
 }
+

@@ -1,7 +1,7 @@
 
     <div class="container">
         <h1>Sample List: </h1>
-        <input type="text" [(ngModel)]="keyword" (input)="search()">
+        <input type="text" [(ngModel)]="keyword" (input)="search()" placeholder="Search group/id here">
       <table cellspacing="0">
         <tr id="top">
           <th>ID</th>
@@ -19,4 +19,7 @@
           <td class="mobile"><a href="tel:{{item.mobile}}"><img class="phoneico" src="assets/donorSample/phone.png" alt="icon"></a></td>
         </tr>
       </table>
+
     </div>
+    <button (click)="addSample()"><img src="assets/adminSample/addbutton.png" alt="icon"></button> <label >Add Sample</label>
+

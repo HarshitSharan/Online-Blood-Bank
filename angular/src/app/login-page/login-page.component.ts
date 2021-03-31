@@ -25,6 +25,8 @@ export class LoginPageComponent implements OnInit {
       this.message="Sucessfully Registered the account"
     else if(this.flag=='logFail')
       this.message="Incorrect Login Credential provided"
+    else if(this.flag=='NA')
+      this.message="Please Login to Continue "
     else 
       this.message=""
     })

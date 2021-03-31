@@ -1,0 +1,20 @@
+<div class="out">
+    <div class="box">
+        <label class="heading">Donor Detail </label>
+        <div class="form" >
+            Id : <input [(ngModel)]="donorObj.Id" type='text' placeholder="Enter Id" ><br>
+            Donar Name : <input [(ngModel)]="donorObj.donorName" type='text' placeholder="Enter Donor Name"><br>
+            Blood Group : <input [(ngModel)]="donorObj.bloodGroup" type='text' placeholder="Enter Blood Group"><br>
+            Weight : <input [(ngModel)]="donorObj.weight" type='text' placeholder="Enter Weight in KG"><br>
+            Age : <input [(ngModel)]="donorObj.age" type='text' placeholder="Enter Age"><br>
+            Mobile : <input [(ngModel)]="donorObj.phone" type="text" placeholder="Enter Mobile Number"><br>
+            Address : <input [(ngModel)]="donorObj.loaction" type="text" placeholder="Enter Your Address"><br>
+            Availability : <span><input name="Avl" type="radio"> Yes <input name="Avl" type="radio"> No</span><br>
+            Ph Lvl : <input [(ngModel)]="donorObj.PHLevel" type="Text" placeholder="Enter PH lvl"><br>
+            Pressure : <input [(ngModel)]="donorObj.bloodPressure" type="text" placeholder="Enter Blood Pressure in mmHg"><br>
+
+        </div>
+        <button (click)='sendData()' type="submit"><img id="buttonIcon" src="\assets\Image\login-page\login-detail\submitButton.png" alt="Submit"></button>
+
+    </div>
+</div>
