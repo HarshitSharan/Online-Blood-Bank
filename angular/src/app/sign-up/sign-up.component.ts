@@ -25,7 +25,7 @@ export class SignUpComponent implements OnInit {
    }
    sendData()
    {
-    console.log(this.Userobj)
+    //console.log(this.Userobj)
 
      this.http.post("http://localhost:8080/signup",this.Userobj).subscribe(data=>
      {
