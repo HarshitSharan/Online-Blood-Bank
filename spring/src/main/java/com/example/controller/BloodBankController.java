@@ -88,8 +88,8 @@ public class BloodBankController {
         LocalDate today=LocalDate.now();
         for(BloodBankModel sample:allSamples)
         {
-            LocalDate submission=LocalDate.parse(sample.getDate());
-            if (Duration.between(today.atStartOfDay(),submission.atStartOfDay()).toDays() >90 )
+
+            if (Duration.between(today.atStartOfDay(),sample.getDateOfSubmission().atStartOfDay()).toDays() >90 )
             {
                 bankRepo.deleteBloodBankModelByBloodBankID(sample.getBloodBankID());
             }

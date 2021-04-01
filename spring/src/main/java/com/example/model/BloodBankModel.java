@@ -4,6 +4,7 @@ package com.example.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.time.LocalDate;
 
 @Entity
 public class BloodBankModel implements Serializable {
@@ -15,7 +16,7 @@ public class BloodBankModel implements Serializable {
     private String bloodPressure;
     private String PHLevel;
     private int Quantity;
-    private String Date; //DDMMYYYY
+    private LocalDate dateOfSubmission; //DDMMYYYY
     private String mobileNumber;
     private String location;
     private Boolean availability;
@@ -26,14 +27,13 @@ public class BloodBankModel implements Serializable {
 
     }
 
-    public BloodBankModel(String bloodBankID, String bloodGroup, String bloodPressure, String PHLevel, int quantity, String date, String mobileNumber, String location, Boolean availability) {
+    public BloodBankModel(String bloodBankID, String bloodGroup, String bloodPressure, String PHLevel, int quantity, LocalDate dateOfSubmission, String mobileNumber, String location, Boolean availability) {
         this.bloodBankID = bloodBankID;
         this.bloodGroup = bloodGroup;
         this.bloodPressure = bloodPressure;
         this.PHLevel = PHLevel;
         Quantity = quantity;
-        Date = date;
-
+        this.dateOfSubmission = dateOfSubmission;
         this.mobileNumber = mobileNumber;
         this.location = location;
         this.availability = availability;
@@ -79,12 +79,12 @@ public class BloodBankModel implements Serializable {
         Quantity = quantity;
     }
 
-    public String getDate() {
-        return Date;
+    public LocalDate getDateOfSubmission() {
+        return dateOfSubmission;
     }
 
-    public void setDate(String date) {
-        Date = date;
+    public void setDateOfSubmission(LocalDate dateOfSubmission) {
+        this.dateOfSubmission = dateOfSubmission;
     }
 
     public String getMobileNumber() {
