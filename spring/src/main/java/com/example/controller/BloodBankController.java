@@ -81,7 +81,8 @@ public class BloodBankController {
     @PutMapping("/admin/sample/{id}")
     public Boolean updateBloodSample(@RequestBody BloodBankModel sample) {
 
-        sample.setDateOfSubmission(bankRepo.findBloodBankModelByBloodBankID(sample.getBloodBankID()).getDateOfSubmission());
+        sample.setDateOfSubmission(LocalDate.now());
+        //bankRepo.findBloodBankModelByBloodBankID(sample.getBloodBankID()).getDateOfSubmission());
         bankRepo.save(sample);
         return true;
 
