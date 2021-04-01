@@ -53,6 +53,7 @@ public class BloodBankController {
     @PostMapping("/admin/addSample")
     public Boolean addBlood(@RequestBody BloodBankModel sample)
     {
+        sample.setDateOfSubmission(LocalDate.now());
         bankRepo.save(sample);
         return true;
     }
