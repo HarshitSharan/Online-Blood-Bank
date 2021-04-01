@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div>
     <h1>Sample Details: </h1>
     <span class="id"> {{data.bloodBankId}}</span>
@@ -10,8 +11,12 @@
         Availabiliy : <span class="avialablity">{{data.availablity}}</span>
         PHPLvl : <span class="ph">{{data.PHLevel}}</span>
         Pressure : <span class="pressure">{{data.bloodPressure}}</span>
-
+    
 
     </div>
+    <div *ngIf="checkRole()">
+        <button >Delete <i class="fa fa-trash-o" style="font-size:20px"></i></button>
+        <button >Update <i class="fa fa-arrow-circle-o-right" style="font-size: 20px;"></i></button>
 
+    </div>
 </div>

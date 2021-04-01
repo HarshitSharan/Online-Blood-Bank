@@ -10,32 +10,44 @@ import { StatusReportService } from '../status-report.service';
 export class SignUpComponent implements OnInit {
   Userobj:any
   flag:any
+  obj:any
   constructor(private http: HttpClient ,private route:  Router,private status:StatusReportService) {
     this.Userobj={
       FirstName:"",
       LastName:"",
-      userId:"",
       mobileNumber:undefined,
       email:"",
+      active:false,
+      password:'',
       role:"User"
     }
-    this.flag={ret:false} 
+    this.flag=true
    }
    sendData()
    {
     console.log(this.Userobj)
-     this.http.post("http://localhost:8080/signup", this.Userobj ).subscribe(data=>this.flag=data)
+    this.obj={
+      "FirstName" : "fas",
+      "LastName": "afsd",
+      "active": false,
+      "email": "afsd",
+      "mobileNumber": 5635,
+      "password": ""
+      }
+     this.http.post("http://localhost:8080/signup",this.obj).subscribe(data=>
+     {this.flag=data
+      console.log(data)})
      
-     if(this.flag.ret)
+     if(this.flag)
      {
       this.status.changeMessage("success")
-        this.route.navigateByUrl('/login?status=success')
+        this.route.navigateByUrl('/login')
 
      }
       else
       {
         this.status.changeMessage("fail")
-        this.route.navigateByUrl('/login?status=fail')
+        this.route.navigateByUrl('/login')
 
       }
    }

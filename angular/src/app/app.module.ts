@@ -16,6 +16,11 @@ import { StatusReportService } from './status-report.service';
 import { DonarListComponent } from './donar-list/donar-list.component';
 import { SampleDetailComponent } from './sample-detail/sample-detail.component';
 import { DonarDetailComponent } from './donar-detail/donar-detail.component';
+import { LoginService } from './login.service';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminsampleComponent } from './adminsample/adminsample.component';
+import { AdminDonorComponent } from './admin-donor/admin-donor.component';
+import { DonorFormComponent } from './donor-form/donor-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +34,10 @@ import { DonarDetailComponent } from './donar-detail/donar-detail.component';
     DonarListComponent,
     SampleDetailComponent,
     DonarDetailComponent,
+    AdminDashboardComponent,
+    AdminsampleComponent,
+    AdminDonorComponent,
+    DonorFormComponent
     
   ],
   imports: [
@@ -38,7 +47,7 @@ import { DonarDetailComponent } from './donar-detail/donar-detail.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [StatusReportService],
+  providers: [StatusReportService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+label
+{
+    background-color: rgba(245, 202, 202, 0.801);
+    border-radius: 10px;
+    height: 30px;
+    font-size: 30px;
+    position: relative;
+    left: 10px;
+    bottom: 10px;
+}
+button
+{
+    border: none;
+    outline: none;
+}
+.phoneico
+{
+    height:40px;
+}
