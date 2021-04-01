@@ -21,7 +21,7 @@ export class LoginDetailComponent implements OnInit {
   {
      this.http.post("http://localhost:8080/login", this.loginObj ).subscribe((data)=>
     {
-      if(true)
+      if(data)
       {
         this.cred.requestData(this.loginObj.id);
         this.cred.changeState(this.loginObj.id)
