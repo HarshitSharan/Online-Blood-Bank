@@ -1,11 +1,13 @@
 <div class="box">
     <img id="userImg" src="\assets\Image\login-page\login-detail\user.png" alt="user"><label class="heading">Sign Up </label>
     <div class="form">
-        <input  [(ngModel)]="Userobj.FirstName" type="text" placeholder="Enter First Name"> <br>
-        <input [(ngModel)]="Userobj.LastName" type="text" placeholder="Enter Last Name"> <br>
+        <input  [(ngModel)]="Userobj.firstName" type="text" placeholder="Enter First Name"> <br>
+        <input [(ngModel)]="Userobj.lastName" type="text" placeholder="Enter Last Name"> <br>
         <input  type="text" placeholder="Enter User Id"> <br>
         <input [(ngModel)]="Userobj.mobileNumber" type="number" placeholder="Enter Mobile Number"> <br>
         <input  [(ngModel)]="Userobj.email" type="text" placeholder="Enter Mail ID"><br>
+        <input [(ngModel)]="Userobj.password" type="password" placeholder="Enter New Password"><br>
+        <input type="password" placeholder="Confirm Password"><br> 
         <button (click)="sendData()" type="submit"><img id="buttonIcon" src="\assets\Image\login-page\login-detail\submitButton.png" alt="Submit"></button>
     </div>
 <h1></h1>
