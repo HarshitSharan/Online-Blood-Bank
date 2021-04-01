@@ -1,23 +1,49 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div>
-    <h1>Donor Details: </h1>
-    <span class="id"> {{data.Id}}</span><br>
-    <span class="bloodGroup">{{data.bloodGroup}}</span><br>
-    <span donor="donorName">{{data.donorName}} </span>
-    <div>
-        Weight : {{data.weight}}<br>
-        Age :  {{data.days}}<br>
-        Mobile : {{data.phone}}<br>
-        Address : {{data.location}} <br>
-        Availabiliy : {{data.availablity}}<br>
-        PH Lvl : {{data.PHLevel}}<br>
-        Pressure : {{data.bloodPressure}}
 
 
+  
+
+    <div class="main">
+        <section>
+        <div class="box1">Donor Details: </div>
+        <div class="box2"> {{data.Id}}</div><br>
+    </section>
+    <div class="pic">
+    <div class="donordet">
+        <img src="" alt="Not loading"><br>
+    
+        <div class="donorname">{{data.donorName}} </div>
     </div>
+    
+    <div class="box">
+        <div class="drop">
+        <div class="bloodGroup">{{data.bloodGroup}}</div>
+    </div>
+    </div>
+    
+    
+    </div>
+    <div class="details">
+            
+        <div class="first">
+    <p>Weight :</p>  <span> {{data.weight}}</span><br>
+    <p> Age :</p> <span> {{data.days}}</span><br>
+    <p> Mobile :</p><span class="mobile"> {{data.phone}}</span><br>
+    <p> Address :</p> <span class="address">{{data.location}}</span> <br> </div>
+    <div class="second">
+    <p> Availabiliy : </p><span>{{data.availablity}}</span><br>
+    <p> PH Lvl :</p><span> {{data.PHLevel}}</span><br>
+    <p>Pressure :</p> <span>{{data.bloodPressure}}</span>
+    
+    
+    </div>
+    
+    </div>
+    
     <div *ngIf="checkRole()">
         <button >Delete <i class="fa fa-trash-o" style="font-size:20px"></i></button>
         <button >Update<i class="fa fa-arrow-circle-o-right" style="font-size: 20px;"></i> </button>
 
     </div>
-</div>
+    
+    </div>
+    
