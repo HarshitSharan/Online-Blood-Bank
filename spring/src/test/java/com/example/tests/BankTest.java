@@ -11,6 +11,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -62,7 +63,14 @@ public class BankTest {
     @Test
     public void showBloodSampleTest()
     {
-        when(bankRepo.findAll()).thenReturn(List.of(new BloodBankModel(),new BloodBankModel(),new BloodBankModel()));
+        BloodBankModel sampleOne = new BloodBankModel();
+        BloodBankModel sampleTwo = new BloodBankModel();
+        BloodBankModel sampleThree = new BloodBankModel();
+
+        sampleOne.setDateOfSubmission(LocalDate.now());
+        sampleTwo.setDateOfSubmission(LocalDate.now());
+        sampleThree.setDateOfSubmission(LocalDate.now());
+        when(bankRepo.findAll()).thenReturn(List.of(sampleOne,sampleTwo,sampleThree));
         assertEquals(3,bloodBankController.showBloodSample().size());
     }
 
@@ -77,6 +85,7 @@ public class BankTest {
     public void updateBloodSampleTest()
     {
         BloodBankModel newSample=new BloodBankModel();
+        newSample.setDateOfSubmission(LocalDate.now());
         when(bankRepo.save(newSample)).thenReturn(newSample);
         assertTrue(bloodBankController.updateBloodSample(newSample));
 
