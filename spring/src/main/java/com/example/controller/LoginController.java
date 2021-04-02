@@ -32,7 +32,12 @@ public class LoginController {
         {
 
             if (alluser.getEmail().equals(newLogin.getEmail()) && alluser.getPassword().equals(newLogin.getPassword()))
+            {
+
+                alluser.setActive(true);
+                userRepo.save(alluser);
                 return true;
+            }
         }
 
         return false;
