@@ -13,8 +13,11 @@ import java.util.List;
 import java.time.*;
 
 @RestController
-@CrossOrigin
+
+
 @RequestMapping
+@CrossOrigin(origins="*") 
+    
 
 public class BloodBankController {
     private final BankRepo bankRepo;

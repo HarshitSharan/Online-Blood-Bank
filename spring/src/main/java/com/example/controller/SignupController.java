@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin
 @RequestMapping("/signup")
+@CrossOrigin(origins="*") 
 public class SignupController {
     private final UserRepo userRepo;
 

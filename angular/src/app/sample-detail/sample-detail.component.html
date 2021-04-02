@@ -1,17 +1,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div>
-    <h1>Sample Details: </h1>
-    <span class="id"> {{data.bloodBankId}}</span>
-    <span class="bloodGroup">{{data.bloodGroup}}</span>
-    <div>
-        Packs : <span class="Packs">{{data.quantity}}</span>
-        No. of days :<span class="days">{{data.days}}</span>
-        Mobile : <span class="mobile">{{data.phone}}</span>
-        Address : <span class="Address"> {{data.location}}</span>
-        Availabiliy : <span class="avialablity">{{data.availablity}}</span>
-        PHPLvl : <span class="ph">{{data.PHLevel}}</span>
-        Pressure : <span class="pressure">{{data.bloodPressure}}</span>
-    
+<div class="main">
+    <section >
+    <div class="box1">Sample Details: </div>
+    <div class="box2"> {{data.bloodBankId}}</div>
+    </section>
+    <div class="drop"><div class="bloodGroup">{{data.bloodGroup}}</div></div>
+    <div class="details">
+        <div class="first">
+       <p> Packs :</p> <span class="Packs">{{data.quantity}}</span><br>
+       <p> No. of days :</p><span class="days">{{data.days}}</span><br>
+       <p> Mobile :</p> <span class="mobile">{{data.phone}}</span><br>
+       <p> Address :</p> <span class="Address"> {{data.location}}</span><br>
+    </div>
+    <div class="second">
+      <p>  Availabiliy : </p><span class="availablity">{{data.availablity}}</span><br>
+       <p> PHPLvl : </p><span class="ph">{{data.PHLevel}}</span><br>
+      <p>  Pressure :</p> <span class="pressure">{{data.bloodPressure}}</span>
+    </div>
 
     </div>
     <div *ngIf="checkRole()">

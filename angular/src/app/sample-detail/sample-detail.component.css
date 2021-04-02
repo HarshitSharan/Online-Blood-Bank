@@ -1,0 +1,143 @@
+
+.main
+{
+    width:90%;
+    height:80vh;
+    
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border:1px solid black;
+
+}
+
+section{
+   display: flex;
+   flex-direction: row;
+    width:100%;
+    height:40px;
+   
+}
+.box1{
+    margin-top: 5px;
+    margin-left: 10px;
+    
+    font-size: 30px;
+    font-weight:bold;
+    flex-basis:max-content;
+   
+}
+.box2{
+    color:white;
+    margin-top: 5px;
+    background:grey;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100px;
+    margin-left: 40px;
+}
+.bloodGroup{
+   background: white;
+   color:black;
+   width:30px;
+   height:20px;
+   text-align: center;
+   transform: rotate(45deg);
+  
+}
+.drop{
+    width:100px;
+    height:100px;
+    background: black;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border-top-right-radius: 0;
+    transform: rotate(-45deg); margin-top:40px;margin-left:40px;
+    margin-bottom: 10px;
+}
+
+.details{
+    width:100%;
+    height:40vh;
+    
+    display: flex;
+}
+.first{
+   
+    flex:2;
+    display: inline-block;
+}
+.second{
+ 
+    flex:2;
+}
+
+p{
+    width:100px;
+    text-align: right;
+   height:20px;
+    background: white;
+    margin-top:2px;
+    padding:20px;
+    font-weight:bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+span{
+    display: inline-block;
+    background: grey;
+   width:40px;
+   height:20px;
+   padding: 20px;
+   color:white;
+    margin-left:20px;
+    border-radius: 10px;
+}
+.mobile
+{
+    width:100px;
+}
+.Address{
+    width:200px;
+    height:40px;
+}
+.second span{
+    width:100px;
+}
+.operation{
+    width:100%;
+    height:10vh;
+ 
+    display: inline-block;
+  
+}
+button{
+    background: grey;
+    color:white;
+    box-shadow: none;
+    border:none;
+    margin-top:35px;
+    cursor:pointer;
+    
+}
+button:nth-child(1){
+  
+    margin-left: 20%;
+    width:10%;
+    height:40%;
+    margin-right: 20%;
+}
+button:nth-child(2){
+  
+    margin-left: -10%;
+    width:10%;
+    height:40%;
+    margin-right: 20%;
+}

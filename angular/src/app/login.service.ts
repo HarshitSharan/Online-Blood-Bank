@@ -23,15 +23,31 @@ export class LoginService {
       role:"admin"
     }
   }
+  checkState( )
+  {
+    if(localStorage.getItem('userId'))
+    {
+      this.state=true;
+      return true;
+    }
+    else
+    {
+      this.state=false;
+      return false;
+    }
+  }
   changeState(userid:string='')
   {
-      if(this.state)
+
+      if(localStorage.getItem('userId'))
       {
         this.username='';
         this.state=false;
+        localStorage.removeItem('userId');
       }
       else
       {
+        localStorage.setItem('userId',userid)
         this.username=userid;
         this.state=true;
       }
