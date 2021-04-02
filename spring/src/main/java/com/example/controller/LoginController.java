@@ -7,6 +7,8 @@ import com.example.repo.UserRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.List;
 
@@ -28,11 +30,17 @@ public class LoginController {
     {
         List<UserModel> allusers= userRepo.findAll();
 
+        PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
         for (UserModel alluser : allusers)
         {
 
-            if (alluser.getEmail().equals(newLogin.getEmail()) && alluser.getPassword().equals(newLogin.getPassword()))
+            if (alluser.getEmail().equals(newLogin.getEmail()) && passwordEncoder.matches(newLogin.getPassword(),alluser.getPassword()))
+            {
+
+                alluser.setActive(true);
+                userRepo.save(alluser);
                 return true;
+            }
         }
 
         return false;

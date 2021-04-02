@@ -33,7 +33,9 @@ public class SignupTest {
         UserModel newUser=new UserModel();
 
         existingUser.setEmail("anuraag@gmail.com");
+        existingUser.setPassword("1234");
         newUser.setEmail("new@gmail.com");
+        newUser.setPassword("1234");
 
         when(userRepo.existsById("anuraag@gmail.com")).thenReturn(true);
         assertFalse(signupController.saveUser(existingUser));
