@@ -1,0 +1,11 @@
+<div class="flx">
+    <div class="navbar">
+        <button (click)="changeFlag(false)" >Donor Details</button>
+        <button (click)="changeFlag(true)">Sample Details</button>
+        <button>Logout</button>
+    </div>
+    <div>
+        <app-samples *ngIf="flag"></app-samples>
+        <app-donar-list *ngIf="!flag"></app-donar-list>
+    </div>
+</div>

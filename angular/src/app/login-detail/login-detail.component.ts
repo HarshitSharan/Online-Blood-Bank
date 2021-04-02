@@ -21,12 +21,12 @@ export class LoginDetailComponent implements OnInit {
   {
      this.http.post("http://localhost:8080/login", this.loginObj ).subscribe((data)=>
     {
-      console.log(data+" data")
       if(data)
       {
-        this.cred.requestData(this.loginObj.id);
-        this.cred.changeState(this.loginObj.id)
-        if(this.cred.userData.role=='user')
+        this.cred.requestData(this.loginObj.email);
+        this.cred.changeState(this.loginObj.email)
+        console.log(this.cred.userData.role)
+        if(this.cred.userData.role=='User')
         this.route.navigateByUrl('/donor')
         else
           this.route.navigateByUrl('/admin')

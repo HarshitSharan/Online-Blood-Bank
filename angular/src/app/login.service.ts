@@ -13,15 +13,6 @@ export class LoginService {
   { 
     this.username='';
     this.state=true;
-    this.userData=
-    {
-      FirstName:"",
-      LastName:"",
-      userId:"",
-      mobileNumber:undefined,
-      email:"",
-      role:"admin"
-    }
   }
   checkState( )
   {
@@ -51,12 +42,13 @@ export class LoginService {
         this.username=userid;
         this.state=true;
       }
-      console.log(this.username)
   }
   requestData(userId:string){
-    this.http.get('http://localhost:8080/UserDetails/'+userId).subscribe((data)=>
-    this.userData=data)
+    this.http.get('http://localhost:8080/UserDetails/'+userId).subscribe((data:any)=>{
+    
+      this.userData=data
+      console.log(this.userData.role+"  serveice")    
+  })
   }
-
 
 }

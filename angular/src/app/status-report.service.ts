@@ -12,4 +12,5 @@ export class StatusReportService {
       this.message.next(message)
   }
   constructor() { }
+  
 }

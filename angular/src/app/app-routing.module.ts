@@ -12,11 +12,13 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { MainSignupComponent } from './main-signup/main-signup.component';
 import { SampleDetailComponent } from './sample-detail/sample-detail.component';
 import { SamplesComponent } from './samples/samples.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 const routes: Routes = [
   {path: 'login',component: LoginPageComponent},
   {path:'admin/donor',component:AdminDonorComponent},
   {path:'signup', component: MainSignupComponent},  
   {path:'admin',component:AdminDashboardComponent,canActivate:[AuthGuardGuard]},
+  {path:'user/dashboard',component:UserDashboardComponent},
   {path:'sample/:id',component:SampleDetailComponent,canActivate:[AuthGuardGuard]},
   {path:'donor/:group',component:DonarDetailComponent,canActivate:[AuthGuardGuard]},
   {path:'admin/addDonor',component:DonorFormComponent},
