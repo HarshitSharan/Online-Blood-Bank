@@ -29,6 +29,10 @@ export class AdminsampleComponent implements OnInit {
     this.route.navigateByUrl('/admin/addSample');
     console.log("navigating")
   }
+  hyperLink(id:string)
+  {
+    this.route.navigateByUrl("sample/"+id)
+  }
   search()
   {
     this.ngOnInit()

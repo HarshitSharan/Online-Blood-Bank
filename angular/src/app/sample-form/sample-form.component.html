@@ -1,0 +1,16 @@
+<div class="out">
+    <div class="box">
+        <label class="heading">Sample Detail </label>
+        <div class="form" >
+            Id : <input [(ngModel)]="sampleObj.bloodBankID" type='text' placeholder="Enter Id" ><br>
+            Blood Group : <input [(ngModel)]="sampleObj.bloodGroup" type='text' placeholder="Enter Blood Group"><br>
+            Blood Pressure : <input [(ngModel)]="sampleObj.bloodPressure" type='text' placeholder="Enter Blood Pressure"><br>
+            PH level : <input [(ngModel)]="sampleObj.phlevel" type='text' placeholder="Enter PH level"><br>
+            Quantity : <input [(ngModel)]="sampleObj.quantity" type='text' placeholder="Enter Quatity in Packs"><br>
+            Mobile Number : <input [(ngModel)]="sampleObj.mobileNumber" type="text" placeholder="Enter Mobile Number"><br>
+            Location : <input [(ngModel)]="sampleObj.location" type="text" placeholder="Enter Your Address"><br>
+            Availability : <span><input name="Avl" [(ngModel)]='sampleObj.availability' type="radio"> Yes <input name="Avl" value='false' type="radio"> No</span><br>        </div>
+        <button (click)='sendData()' type="submit"><img id="buttonIcon" src="\assets\Image\login-page\login-detail\submitButton.png" alt="Submit"></button>
+        <button (click)='cancel()' type="button">Cancel</button>
+    </div>
+</div>

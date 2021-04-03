@@ -28,27 +28,29 @@ export class LoginService {
       return false;
     }
   }
-  async changeState(userid:string='')
+   changeState(userid:string='')
   {
       
-      if( await localStorage.getItem('userId'))
+      if(  localStorage.getItem('userId'))
       {
 
         console.log("if")
         this.username='';
         this.state=false;
-        await localStorage.removeItem('userId');
+         localStorage.removeItem('userId');
       }
       else
       {
         console.log("else")
-        await localStorage.setItem('userId',userid)
+       localStorage.setItem('userId',userid)
         this.username=userid;
         this.state=true;
       }
   }
-  requestData(userId:string) :Observable<any>
+  requestData(userId:any='') :Observable<any>
   {
+    if(!userId)
+      userId=localStorage.getItem('userId');
     return this.http.get('http://localhost:8080/UserDetails/'+userId);
   }
 

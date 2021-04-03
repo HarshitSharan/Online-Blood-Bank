@@ -11,7 +11,7 @@
           <th></th>
         </tr>
 
-        <tr class="row" (click)="hyperLink()" *ngFor="let item of donarList">
+        <tr class="row" *ngFor="let item of donarList" (click)="hyperLink(item.id)"> 
           <td class="id">{{item.id}}.</td>
           <td class="SampleGroup">{{item.Name}}</td>
           <td class="NoOfPacks">{{item.bloodType}}</td>

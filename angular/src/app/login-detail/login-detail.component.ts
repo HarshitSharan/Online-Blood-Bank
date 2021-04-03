@@ -35,7 +35,7 @@ export class LoginDetailComponent implements OnInit {
             }
 
             else
-              this.route.navigateByUrl('/admin')
+              this.route.navigateByUrl('admin/dashboard')
           })
       }
       else

@@ -22,6 +22,7 @@ import { AdminsampleComponent } from './adminsample/adminsample.component';
 import { AdminDonorComponent } from './admin-donor/admin-donor.component';
 import { DonorFormComponent } from './donor-form/donor-form.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { SampleFormComponent } from './sample-form/sample-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     AdminsampleComponent,
     AdminDonorComponent,
     DonorFormComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    SampleFormComponent
     
   ],
   imports: [

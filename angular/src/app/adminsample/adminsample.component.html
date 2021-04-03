@@ -11,7 +11,7 @@
           <th></th>
         </tr>
 
-        <tr class="row" *ngFor="let item of sampleList">
+        <tr class="row" *ngFor="let item of sampleList" (click)="hyperLink(item.id)">
           <td class="id">{{item.id}}.</td>
           <td class="SampleGroup">{{item.sampleGroup}}</td>
           <td class="NoOfPacks">{{item.quantity}}pcs</td>

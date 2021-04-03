@@ -108,3 +108,7 @@ input
   {
     height: 40px;
   }
+  tr:not([id=top]):hover
+  {
+    background-color: blue;
+  }

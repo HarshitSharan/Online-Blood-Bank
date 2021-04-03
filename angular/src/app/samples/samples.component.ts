@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class SamplesComponent implements OnInit {
   sampleList:any;
   keyword:string;
 
-  constructor(private http:HttpClient) 
+  constructor(private http:HttpClient,private route:Router) 
   { 
     let obj={
       sampleGroup :'',
@@ -21,8 +22,12 @@ export class SamplesComponent implements OnInit {
       id:''
     }
     this.sampleList=[]
-
+    
     this.keyword=''
+  }
+  hyperLink(id:string)
+  {
+    this.route.navigateByUrl("sample/"+id)
   }
   search()
   {

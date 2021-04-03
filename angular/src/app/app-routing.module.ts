@@ -11,15 +11,18 @@ import { ErrorComponent } from './error/error.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MainSignupComponent } from './main-signup/main-signup.component';
 import { SampleDetailComponent } from './sample-detail/sample-detail.component';
+import { SampleFormComponent } from './sample-form/sample-form.component';
 import { SamplesComponent } from './samples/samples.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 const routes: Routes = [
   {path: 'login',component: LoginPageComponent},
   {path:'admin/donor',component:AdminDonorComponent},
+  {path:'admin/addSample',component:SampleFormComponent},
   {path:'signup', component: MainSignupComponent},  
-  {path:'admin',component:AdminDashboardComponent,canActivate:[AuthGuardGuard]},
+  {path:'admin/dashboard',component:UserDashboardComponent,canActivate:[AuthGuardGuard]},
   {path:'user/dashboard',component:UserDashboardComponent},
   {path:'sample/:id',component:SampleDetailComponent},
+  {path:'admin/addDonor',component:DonorFormComponent},
   {path:'donor/:group',component:DonarDetailComponent,canActivate:[AuthGuardGuard]},
   {path:'admin/addDonor',component:DonorFormComponent},
   {path:'sample',component:SamplesComponent},

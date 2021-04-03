@@ -11,7 +11,7 @@ export class AdminDonorComponent implements OnInit {
   constructor(private route :Router) { }
   addSample()
   {
-    this.route.navigateByUrl('/admin/addSample');
+    this.route.navigateByUrl('/admin/addDonor');
     console.log("navigating")
   }
   ngOnInit(): void {

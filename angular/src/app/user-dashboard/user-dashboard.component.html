@@ -5,7 +5,9 @@
         <button (click)="logout()">Logout</button>
     </div>
     <div class="detail">
-        <app-samples *ngIf="flag"></app-samples>
-        <app-donar-list *ngIf="!flag"></app-donar-list>
+        <app-samples *ngIf="flag && role=='User'"></app-samples>
+        <app-donar-list *ngIf="!flag && role=='User'"></app-donar-list>
+        <app-adminsample *ngIf="flag && role!='User'"></app-adminsample>
+        <app-admin-donor *ngIf="!flag && role!='User'"></app-admin-donor>
     </div>
 </div>

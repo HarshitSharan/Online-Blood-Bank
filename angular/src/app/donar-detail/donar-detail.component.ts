@@ -13,24 +13,12 @@ export class DonarDetailComponent implements OnInit {
   data:any;
   constructor(private route: ActivatedRoute,private http:HttpClient,private logCheck: LoginService) { 
     this.id='';
-    this.data=
-    {
-      Id:'123',
-      bloodGroup :'b+',
-      donorName:'Harshit Sharan',
-      bloodPressure:'10',
-      active:false,
-      weight:'10kg',
-      age:'20 Years',
-      PHLevel:'3',
-      phone:6205540428,
-      location:'Giridih,Jharkhand',
-      availablity:'Yes' 
-    }
   }
   checkRole()
   {
-    return this.logCheck.userData.role=='admin'
+    var role
+    this.logCheck.requestData().subscribe(data=>role=data.role)
+    return role!='User'
   }
   ngOnInit(): void 
   {

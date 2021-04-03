@@ -17,6 +17,7 @@ export class AuthGuardGuard implements CanActivate {
     //console.log(this.logCheck.state)
       if(!this.logCheck.checkState())
       {
+        
         this.status.changeMessage('NA')
         this.route.navigateByUrl('login')
         
