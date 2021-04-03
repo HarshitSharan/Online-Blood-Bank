@@ -2,9 +2,9 @@
     <div class="navbar">
         <button (click)="changeFlag(false)" >Donor Details</button>
         <button (click)="changeFlag(true)">Sample Details</button>
-        <button>Logout</button>
+        <button (click)="logout()">Logout</button>
     </div>
-    <div>
+    <div class="detail">
         <app-samples *ngIf="flag"></app-samples>
         <app-donar-list *ngIf="!flag"></app-donar-list>
     </div>

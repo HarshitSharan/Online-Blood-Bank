@@ -10,13 +10,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 @RestController
-<<<<<<< HEAD
-@RequestMapping("/signup")
-@CrossOrigin(origins="*") 
-=======
 @CrossOrigin
 @RequestMapping
->>>>>>> fcc2ce447bc767c21ddde01aca079152b7627d94
 public class SignupController {
     private final UserRepo userRepo;
 

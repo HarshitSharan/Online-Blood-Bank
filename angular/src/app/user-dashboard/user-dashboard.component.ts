@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -6,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent implements OnInit {
+  
 
   flag:boolean;
-  constructor() {
+  constructor(private route:Router,private log:LoginService) {
     this.flag=true;
    }
 
@@ -16,6 +19,11 @@ export class UserDashboardComponent implements OnInit {
    {
      console.log("flag"+ this.flag)
     this.flag=state
+   }
+   logout()
+   {
+    this.log.changeState();
+    this.route.navigateByUrl('/login')
    }
   ngOnInit(): void {
     

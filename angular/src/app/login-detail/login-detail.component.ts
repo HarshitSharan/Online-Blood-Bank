@@ -23,13 +23,20 @@ export class LoginDetailComponent implements OnInit {
     {
       if(data)
       {
-        this.cred.requestData(this.loginObj.email);
-        this.cred.changeState(this.loginObj.email)
-        console.log(this.cred.userData.role)
-        if(this.cred.userData.role=='User')
-        this.route.navigateByUrl('/donor')
-        else
-          this.route.navigateByUrl('/admin')
+        
+        this.cred.changeState(this.loginObj.email);
+        this.cred.requestData(this.loginObj.email).subscribe(data=>
+          {
+            console.log(data.role,"yha")
+            if(data.role=='User')
+            {
+              console.log("ysadkj")
+              this.route.navigateByUrl('user/dashboard')
+            }
+
+            else
+              this.route.navigateByUrl('/admin')
+          })
       }
       else
       {

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -27,28 +28,28 @@ export class LoginService {
       return false;
     }
   }
-  changeState(userid:string='')
+  async changeState(userid:string='')
   {
-
-      if(localStorage.getItem('userId'))
+      
+      if( await localStorage.getItem('userId'))
       {
+
+        console.log("if")
         this.username='';
         this.state=false;
-        localStorage.removeItem('userId');
+        await localStorage.removeItem('userId');
       }
       else
       {
-        localStorage.setItem('userId',userid)
+        console.log("else")
+        await localStorage.setItem('userId',userid)
         this.username=userid;
         this.state=true;
       }
   }
-  requestData(userId:string){
-    this.http.get('http://localhost:8080/UserDetails/'+userId).subscribe((data:any)=>{
-    
-      this.userData=data
-      console.log(this.userData.role+"  serveice")    
-  })
+  requestData(userId:string) :Observable<any>
+  {
+    return this.http.get('http://localhost:8080/UserDetails/'+userId);
   }
 
 }

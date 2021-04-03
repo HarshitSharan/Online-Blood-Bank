@@ -22,6 +22,10 @@ export class DonarListComponent implements OnInit {
 
     this.keyword=''
   }
+  hyperLink()
+  {
+    console.log("clicked")
+  }
   search()
   {
     this.ngOnInit()
@@ -74,5 +78,6 @@ export class DonarListComponent implements OnInit {
       
     ]
   }
+
 
 }
