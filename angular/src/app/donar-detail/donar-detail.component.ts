@@ -13,6 +13,18 @@ export class DonarDetailComponent implements OnInit {
   data:any;
   constructor(private route: ActivatedRoute,private http:HttpClient,private logCheck: LoginService) { 
     this.id='';
+    this.data={
+      id:'',
+      donarName:'',
+      bloodGroup:'',
+      phlevel:'',
+      bloodPressure:'',
+      weight:'',
+      age:'',
+      phone:'',
+      location:'',
+      availablity:''
+    }
   }
   checkRole()
   {
@@ -23,7 +35,10 @@ export class DonarDetailComponent implements OnInit {
   ngOnInit(): void 
   {
     this.id=this.route.snapshot.paramMap.get('group')
-    this.http.get("http://localhost:8080/sample/"+this.id).subscribe((data)=>this.data=data)
+    this.http.get("http://localhost:8080/donor/"+this.id).subscribe((data)=>{
+      this.data=data
+      console.log(data)
+  })
   }
 
 }

@@ -48,6 +48,7 @@ input[type="number"]
 }
 .form
 {
+    margin-top: 50px;
     text-align: left;    
     width: 80%;
 }

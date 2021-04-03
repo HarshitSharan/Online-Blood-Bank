@@ -12,11 +12,11 @@
         </tr>
 
         <tr class="row" *ngFor="let item of sampleList" (click)="hyperLink(item.id)">
-          <td class="id">{{item.id}}.</td>
-          <td class="SampleGroup">{{item.sampleGroup}}</td>
-          <td class="NoOfPacks">{{item.quantity}}pcs</td>
+          <td class="id">{{item.bloodBankID}}.</td>
+          <td class="SampleGroup">{{item.bloodGroup}}</td>
+          <td class="NoOfPacks">{{item.weight}}pcs</td>
           <td class="loaction">{{item.location}}</td>
-          <td class="mobile"><a href="tel:{{item.mobile}}"><img class="phoneico" src="assets/donorSample/phone.png" alt="icon"></a></td>
+          <td class="mobile"><a href="tel:{{item.mobileNumber}}"><img class="phoneico" src="assets/donorSample/phone.png" alt="icon"></a></td>
         </tr>
       </table>
 

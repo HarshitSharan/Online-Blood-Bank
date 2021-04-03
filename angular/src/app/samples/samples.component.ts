@@ -11,91 +11,53 @@ import { Router } from '@angular/router';
 export class SamplesComponent implements OnInit {
   sampleList:any;
   keyword:string;
-
-  constructor(private http:HttpClient,private route:Router) 
+   temp:any;
+  constructor(private http:HttpClient,private route: Router) 
   { 
     let obj={
-      sampleGroup :'',
-      quantity:0,
+      bloodGroup :'',
+      weight:0,
       location: '',
-      mobile:'',
-      id:''
+      phone:'',
+      bloodBankID:''
     }
     this.sampleList=[]
-    
+
     this.keyword=''
+  }
+  addSample()
+  {
+    this.route.navigateByUrl('/admin/addSample');
+    console.log("navigating")
   }
   hyperLink(id:string)
   {
     this.route.navigateByUrl("sample/"+id)
   }
+  fun()
+  {
+    this.sampleList=this.temp;
+  }
   search()
   {
-    this.ngOnInit()
+   this.fun(); 
     if(this.keyword!='')
     {
       this.sampleList=this.sampleList.filter((data:any)=>{
-        return data.sampleGroup.toLocaleLowerCase().startsWith(this.keyword.toLocaleLowerCase())
+        return data.bloodGroup.toLocaleLowerCase().startsWith(this.keyword.toLocaleLowerCase())
       })
     }
-    else
-      this.ngOnInit()
-
+    
+ 
   }
 
   ngOnInit(): void {
-    // this.http.get('http://localhost:8080/sample').subscribe((data)=>{
-    // this.sampleList=data
-    // })
-    this.sampleList=[{
-      
-      sampleGroup :'b+',
-      quantity:10,
-      location: 'Giridih,Jharkhand',
-      mobile:'1234567890',
-      id:'1'
+     this.http.get('http://localhost:8080/sample').subscribe((data)=>{
+     this.sampleList=data
+     this.temp=data;
+     })
 
-    },
-    {
-      sampleGroup :'ab-',
-      quantity:20,
-      location: 'Jhumri Teliya,Jharakhand,Jhumri Teliya,Jharakhand,Jhumri Teliya,Jharakhand,Jhumri Teliya,Jharakhand,Jhumri Teliya,Jharakhand',
-      mobile:'1234567890',
-      id:'2'
-
-    },
-    {
-      sampleGroup :'a+',
-      quantity:15,
-      location: 'Kolkata,West Bengal',
-      mobile:'1234567890',
-      id:'45'
-
-    },
-    {
-      sampleGroup :'o+',
-      quantity:14,
-      location: 'jksajfad, jkdsafjafkjs',
-      mobile:'1234567890',
-      id:'43'
-
-    },
-    {
-      sampleGroup :'o-',
-      quantity:14,
-      location: 'jksajfad, jkdsafjafkjs',
-      mobile:'1234567890',
-      id:'43'
-
-    },
-    {
-      sampleGroup :'o+',
-      quantity:14,
-      location: 'jksajfad, jkdsafjafkjs',
-      mobile:'1234567890',
-      id:'43'
-
-    }]
   }
 
 }
+

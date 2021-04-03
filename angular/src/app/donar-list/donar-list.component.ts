@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
 export class DonarListComponent implements OnInit {
   donarList:any;
   keyword:string;
-
+  temp:any;
   constructor(private http:HttpClient,private route:Router) 
   { 
     let obj={
-      bloodType :'',
-      Name:'',
-      mobile:0,
+      bloodGroup :'',
+      donarName:'',
+      phone:0,
       id:''
     }
     this.donarList=[]
@@ -29,55 +29,21 @@ export class DonarListComponent implements OnInit {
   }
   search()
   {
-    this.ngOnInit()
+    this.donarList=this.temp;
     if(this.keyword!='')
     {
       this.donarList=this.donarList.filter((data:any)=>{
-        return data.bloodType.toLocaleLowerCase().startsWith(this.keyword.toLocaleLowerCase())
+        return data.bloodGroup.toLocaleLowerCase().startsWith(this.keyword.toLocaleLowerCase())
       })
     }
-    else
-      this.ngOnInit()
-
   }
 
   ngOnInit(): void {
-    // this.http.get('http://localhost:8080/donor').subscribe((data)=>{
-    // this.sampleList=data
-    // })
-    this.donarList=[
-      {
-        bloodType :'b+',
-        Name:'Harshit',
-        mobile:6205540428,
-        id:'32'
-      },
-      {
-        bloodType :'ab+',
-        Name:'Sharan',
-        mobile:8877078008,
-        id:'2'
-      },
-      {
-        bloodType :'b-',
-        Name:'Harsh',
-        mobile:6205540528,
-        id:'323'
-      },
-      {
-        bloodType :'o+',
-        Name:'Harshit',
-        mobile:6205540428,
-        id:'32'
-      },
-      {
-        bloodType :'o-',
-        Name:'Harshit',
-        mobile:6205540428,
-        id:'32'
-      },
-      
-    ]
+     this.http.get('http://localhost:8080/donor').subscribe((data)=>{
+     this.donarList=data
+     this.temp=data
+     })
+
   }
 
 
