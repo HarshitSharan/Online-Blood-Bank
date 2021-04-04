@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalConstants } from '../common/global';
 
 @Component({
   selector: 'app-adminsample',
@@ -52,7 +53,7 @@ export class AdminsampleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     this.http.get('http://localhost:8080/sample').subscribe((data)=>{
+     this.http.get(GlobalConstants.apiPrefix+'sample').subscribe((data)=>{
      this.sampleList=data
      this.temp=data;
      })

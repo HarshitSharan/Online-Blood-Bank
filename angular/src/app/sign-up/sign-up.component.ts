@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
+import { GlobalConstants } from '../common/global';
 import { StatusReportService } from '../status-report.service';
 @Component({
   selector: 'sign-up',
@@ -27,7 +28,7 @@ export class SignUpComponent implements OnInit {
    {
     //console.log(this.Userobj)
 
-     this.http.post("http://localhost:8080/signup",this.Userobj).subscribe(data=>
+     this.http.post(GlobalConstants.apiPrefix+"signup",this.Userobj).subscribe(data=>
      {
        
     

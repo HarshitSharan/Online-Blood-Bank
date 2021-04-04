@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
+import { GlobalConstants } from './common/global';
 
 @Injectable({
   providedIn: 'root'
@@ -47,7 +48,7 @@ export class LoginService {
   {
     if(!userId)
       userId=localStorage.getItem('userId');
-    return this.http.get('http://localhost:8080/UserDetails/'+userId);
+    return this.http.get(GlobalConstants.apiPrefix+'UserDetails/'+userId);
   }
 
 }

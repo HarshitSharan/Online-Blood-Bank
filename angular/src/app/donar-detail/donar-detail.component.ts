@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { Location } from '@angular/common'
+import { GlobalConstants } from '../common/global';
 @Component({
   selector: 'app-donar-detail',
   templateUrl: './donar-detail.component.html',
@@ -34,7 +35,7 @@ export class DonarDetailComponent implements OnInit {
   }
   delete()
   {
-    this.http.delete('http://localhost:8080/admin/donor/'+this.id).subscribe(data=>console.log(data))
+    this.http.delete(GlobalConstants.apiPrefix+'admin/donor/'+this.id).subscribe(data=>console.log(data))
     this.navi.navigateByUrl("admin/dashboard")
   }
   goBack()
@@ -49,7 +50,7 @@ export class DonarDetailComponent implements OnInit {
   ngOnInit(): void 
   {
     this.id=this.route.snapshot.paramMap.get('group')
-    this.http.get("http://localhost:8080/donor/"+this.id).subscribe((data)=>{
+    this.http.get(GlobalConstants.apiPrefix+"/donor/"+this.id).subscribe((data)=>{
       this.data=data
 
   })

@@ -3,6 +3,7 @@ import { templateJitUrl } from '@angular/compiler';
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GlobalConstants } from '../common/global';
 import { LoginService } from '../login.service';
 
 @Component({
@@ -46,13 +47,13 @@ export class SampleDetailComponent implements OnInit {
  }
  delete()
  {
-   this.http.delete('http://localhost:8080/admin/sample/'+this.id).subscribe(data=>console.log(data))
+   this.http.delete(GlobalConstants.apiPrefix+'admin/sample/'+this.id).subscribe(data=>console.log(data))
    this.navi.navigateByUrl("admin/dashboard")
  }
   ngOnInit(): void 
   {
     this.id=this.route.snapshot.paramMap.get('id')
-    this.http.get("http://localhost:8080/sample/"+this.id).subscribe((data)=>this.data=data)
+    this.http.get(GlobalConstants.apiPrefix+"sample/"+this.id).subscribe((data)=>this.data=data)
     //console.log(this.data)
     this.logCheck.requestData().subscribe(data=>this.role=data.role)
   }

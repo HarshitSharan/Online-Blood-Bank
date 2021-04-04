@@ -12,7 +12,7 @@ export class AdminDonorComponent implements OnInit {
   addSample()
   {
     this.route.navigateByUrl('/admin/addDonor');
-    console.log("navigating")
+   // console.log("navigating")
   }
   ngOnInit(): void {
   }
