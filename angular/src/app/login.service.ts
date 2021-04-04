@@ -28,24 +28,20 @@ export class LoginService {
       return false;
     }
   }
-   changeState(userid:string='')
+   changeState(userid:string)
   {
       
-      if(  localStorage.getItem('userId'))
-      {
-
-        console.log("if")
-        this.username='';
-        this.state=false;
-         localStorage.removeItem('userId');
-      }
-      else
-      {
         console.log("else")
        localStorage.setItem('userId',userid)
         this.username=userid;
         this.state=true;
-      }
+        
+  }
+  logout()
+  {
+    this.username='';
+    this.state=false;
+    localStorage.removeItem('userId');
   }
   requestData(userId:any='') :Observable<any>
   {

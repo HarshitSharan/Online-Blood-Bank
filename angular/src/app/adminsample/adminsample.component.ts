@@ -31,6 +31,7 @@ export class AdminsampleComponent implements OnInit {
   }
   hyperLink(id:string)
   {
+    //console.log(id);
     this.route.navigateByUrl("sample/"+id)
   }
   fun()

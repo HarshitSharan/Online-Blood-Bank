@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
+import { templateJitUrl } from '@angular/compiler';
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../login.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class SampleDetailComponent implements OnInit {
 
   id:any
   data:any;
-  constructor(private route: ActivatedRoute,private http:HttpClient, private logCheck: LoginService) { 
+  role:any;
+  constructor(private route: ActivatedRoute,private http:HttpClient, private logCheck: LoginService,private navi:Router) { 
     this.id=''
     this.data=
     {
@@ -30,12 +32,29 @@ export class SampleDetailComponent implements OnInit {
   }
  checkRole()
  {
-   return this.logCheck.userData.role=='admin'
+
+   return this.role!='User'
+ }
+ goBack()
+ {
+   let temp;
+   this.logCheck.requestData().subscribe(data=>temp=data.role)
+   if (temp=='User')
+     this.navi.navigateByUrl("user/dashboard")
+   else
+     this.navi.navigateByUrl("admin/dashboard")
+ }
+ delete()
+ {
+   this.http.delete('http://localhost:8080/admin/sample/'+this.id).subscribe(data=>console.log(data))
+   this.navi.navigateByUrl("admin/dashboard")
  }
   ngOnInit(): void 
   {
     this.id=this.route.snapshot.paramMap.get('id')
     this.http.get("http://localhost:8080/sample/"+this.id).subscribe((data)=>this.data=data)
+    //console.log(this.data)
+    this.logCheck.requestData().subscribe(data=>this.role=data.role)
   }
 
 }

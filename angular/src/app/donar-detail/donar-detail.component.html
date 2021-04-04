@@ -1,7 +1,7 @@
 
 
   
-
+<button (click)="goBack()" id="close">Close</button>
     <div class="main">
         <section>
         <div class="box1">Donor Details: </div>
@@ -26,12 +26,12 @@
             
         <div class="first">
     <p>Weight :</p>  <span> {{data.weight}}</span><br>
-    <p> Age :</p> <span> {{data.days}}</span><br>
+    <p> Age :</p> <span> {{data.age}}</span><br>
     <p> Mobile :</p><span class="mobile"> {{data.phone}}</span><br>
     <p> Address :</p> <span class="address">{{data.location}}</span> <br> </div>
     <div class="second">
     <p> Availabiliy : </p><span>{{data.availablity}}</span><br>
-    <p> PH Lvl :</p><span> {{data.PHLevel}}</span><br>
+    <p> PH Lvl :</p><span> {{data.phlevel}}</span><br>
     <p>Pressure :</p> <span>{{data.bloodPressure}}</span>
     
     
@@ -40,7 +40,7 @@
     </div>
     
     <div *ngIf="checkRole()">
-        <button >Delete <i class="fa fa-trash-o" style="font-size:20px"></i></button>
+        <button (click)="delete()">Delete <i class="fa fa-trash-o" style="font-size:20px"></i></button>
         <button >Update<i class="fa fa-arrow-circle-o-right" style="font-size: 20px;"></i> </button>
 
     </div>

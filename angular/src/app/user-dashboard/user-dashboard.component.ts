@@ -23,11 +23,11 @@ export class UserDashboardComponent implements OnInit {
    }
    logout()
    {
-    this.log.changeState();
+    this.log.logout();
     this.msg.changeMessage("Logged Out Sucessfully")
     this.route.navigateByUrl('/login')
    }
-   
+
   ngOnInit(): void {
     this.log.requestData().subscribe((data)=>
     this.role=data.role);

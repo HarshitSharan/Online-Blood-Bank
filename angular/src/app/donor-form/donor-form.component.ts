@@ -16,8 +16,8 @@ export class DonorFormComponent implements OnInit {
  {
    console.log(this.donorObj);
    this.http.post("http://localhost:8080/admin/addDonor",this.donorObj).subscribe(data=>console.log(data))
-    console.log("send obj")
-   this.route.navigateByUrl("/admin/donor")
+    //console.log("send obj")
+   this.route.navigateByUrl("admin/dashboard")
 
  }
   ngOnInit(): void {

@@ -1,26 +1,28 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="main">
+    <button id="close" (click)="goBack()" ><i class="fa fa-chevron-circle-left" style="font-size:20px" aria-hidden="true"> Close</i></button>
     <section >
     <div class="box1">Sample Details: </div>
-    <div class="box2"> {{data.bloodBankId}}</div>
+    <div class="box2"> {{data.bloodBankID}}</div>
     </section>
     <div class="drop"><div class="bloodGroup">{{data.bloodGroup}}</div></div>
     <div class="details">
         <div class="first">
        <p> Packs :</p> <span class="Packs">{{data.quantity}}</span><br>
        <p> No. of days :</p><span class="days">{{data.days}}</span><br>
-       <p> Mobile :</p> <span class="mobile">{{data.phone}}</span><br>
+       <p> Mobile :</p> <span class="mobile">{{data.mobileNumber}}</span><br>
        <p> Address :</p> <span class="Address"> {{data.location}}</span><br>
     </div>
     <div class="second">
       <p>  Availabiliy : </p><span class="availablity">{{data.availablity}}</span><br>
-       <p> PHPLvl : </p><span class="ph">{{data.PHLevel}}</span><br>
+       <p> PHPLvl : </p><span class="ph">{{data.phlevel}}</span><br>
       <p>  Pressure :</p> <span class="pressure">{{data.bloodPressure}}</span>
     </div>
 
     </div>
     <div *ngIf="checkRole()">
-        <button >Delete <i class="fa fa-trash-o" style="font-size:20px"></i></button>
+        <button (click)="delete()" >Delete <i class="fa fa-trash-o" style="font-size:20px"></i></button>
         <button >Update <i class="fa fa-arrow-circle-o-right" style="font-size: 20px;"></i></button>
 
     </div>

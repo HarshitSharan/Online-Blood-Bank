@@ -26,8 +26,8 @@ export class SampleFormComponent implements OnInit {
   sendData()
   {
     this.http.post('http://localhost:8080/admin/addSample',this.sampleObj).subscribe((data)=>console.log(data))
-    //this.route.navigateByUrl('admin/dashboard')
-    console.log(this.sampleObj)
+    this.route.navigateByUrl('admin/dashboard')
+   // console.log(this.sampleObj)
   }
   cancel()
   {
