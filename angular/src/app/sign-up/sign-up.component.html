@@ -1,4 +1,4 @@
-<div class="box">
+<!-- <div class="box">
     <img id="userImg" src="\assets\Image\login-page\login-detail\user.png" alt="user"><label class="heading">Sign Up </label>
     <div class="form">
         <input  [(ngModel)]="Userobj.firstName" type="text" placeholder="Enter First Name"> <br>
@@ -11,6 +11,43 @@
         <button (click)="sendData()"  type="submit"><img id="buttonIcon" src="\assets\Image\login-page\login-detail\submitButton.png" alt="Submit"></button>
     </div>
 <h1></h1>
+</div> -->
+<div class="box" >
+    <img id="userImg" src="\assets\Image\login-page\login-detail\user.png" alt="user"><label class="heading">Sign Up </label>
+    <div class="form">
+        <form #userForm="ngForm" >
+            <input [class.is-invalid]="name.invalid && name.touched" pattern="^[a-zA-Z]+$" required #name="ngModel" [(ngModel)]="Userobj.firstName" name="Userobj.firstName" type="text" placeholder="Enter First Name"> <br>
+            <small>
+                <span *ngIf="name.invalid && name.touched">Enter Valid First Name</span>
+            </small>
+            <input #last="ngModel" required pattern="^[a-zA-Z]+$" [(ngModel)]="Userobj.lastName" name="Userobj.lastName" type="text" placeholder="Enter Last Name"> <br>
+            <small>
+                <span *ngIf="last.invalid && last.touched">Enter Valid Last Name</span>
+            </small>
+            <input  type="text" placeholder="Enter User Id"> <br>
+            <input #phone="ngModel" required pattern="^\d{10}$" [(ngModel)]="Userobj.mobileNumber" name="Userobj.mobileNumber" type="text"  id="mobile" placeholder="Enter Mobile Number"> <br>
+            <small>
+                <span *ngIf="phone.invalid && phone.touched">Enter Valid 10 digit Phone Number</span>
+            </small>
+            <input #email="ngModel" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required [(ngModel)]="Userobj.email" name="Userobj.email" type="text" placeholder="Enter Mail ID"><br>
+            <small>
+                <span *ngIf="email.invalid && email.touched">Enter Valid EMail id </span>                
+            </small>
+            <input #pass="ngModel" required [(ngModel)]="Userobj.password" name="Userobj.password" type="password" id="password" placeholder="Enter New Password"><br>
+            <small>
+                <span *ngIf="pass.invalid && pass.touched">Password is Required Field </span>                
+            </small>
+            <input required #cpass="ngModel" [(ngModel)]="confirmPass" name="confirmPass"type="password" placeholder="Confirm Password" id="cpassword"><br> 
+            <small>
+                <span *ngIf="pass.touched && cpass.touched && Userobj.password!=confirmPass">Confirm Password Not Matching</span>                
+            </small>
+            <button (click)="sendData(userForm.form.invalid)"  type="submit"><img id="buttonIcon" src="\assets\Image\login-page\login-detail\submitButton.png" alt="Submit"></button>
+        </form>
+    </div>
+
 </div>
+<div id = "msg" *ngIf="fl">Enter Valid Form Data To Proceed </div>
+<!-- {{userForm.form.invalid | json}} -->
+
 
 

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {Router} from '@angular/router'
 import { GlobalConstants } from '../common/global';
 import { StatusReportService } from '../status-report.service';
@@ -9,9 +10,12 @@ import { StatusReportService } from '../status-report.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+  
   Userobj:any
   flag:any
   obj:any
+  fl:boolean
+  confirmPass:string;
   constructor(private http: HttpClient ,private route:  Router,private status:StatusReportService) {
     this.Userobj={
       firstName:"",
@@ -20,14 +24,23 @@ export class SignUpComponent implements OnInit {
       email:"",
       active:false,
       password:'',
-      role:"User"
+      role:"User",
+
     }
-
+    this.confirmPass=''
+    this.fl=false;
    }
-   sendData()
+   sendData(flag:boolean)
    {
+     //console.log(flag)
     //console.log(this.Userobj)
-
+     if (flag)
+     {
+      
+       this.fl=flag
+       return
+     }
+    
      this.http.post(GlobalConstants.apiPrefix+"signup",this.Userobj).subscribe(data=>
      {
        

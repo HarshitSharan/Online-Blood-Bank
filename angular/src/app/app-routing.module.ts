@@ -16,19 +16,18 @@ import { SamplesComponent } from './samples/samples.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 const routes: Routes = [
   {path: 'login',component: LoginPageComponent},
-  {path:'admin/donor',component:AdminDonorComponent},
-  {path:'admin/addSample',component:SampleFormComponent},
+  {path:'admin/donor',component:AdminDonorComponent,canActivate:[AuthGuardGuard]},
+  {path:'admin/addSample',component:SampleFormComponent,canActivate:[AuthGuardGuard]},
   {path:'signup', component: MainSignupComponent},  
   {path:'admin/dashboard',component:UserDashboardComponent,canActivate:[AuthGuardGuard]},
-
   {path:'user/dashboard',component:UserDashboardComponent,canActivate:[AuthGuardGuard]},
-  {path:'sample/:id',component:SampleDetailComponent},
-  {path:'admin/addDonor',component:DonorFormComponent},
+  {path:'sample/:id',component:SampleDetailComponent,canActivate:[AuthGuardGuard]},
+  {path:'admin/addDonor',component:DonorFormComponent,canActivate:[AuthGuardGuard]},
   {path:'donor/:group',component:DonarDetailComponent,canActivate:[AuthGuardGuard]},
-  {path:'admin/addDonor',component:DonorFormComponent},
-  {path:'sample',component:SamplesComponent},
+  {path:'admin/addDonor',component:DonorFormComponent,canActivate:[AuthGuardGuard]},
+  {path:'sample',component:SamplesComponent,canActivate:[AuthGuardGuard]},
   {path:'', redirectTo: '/login', pathMatch:'full'},
-  {path:'admin/sample', component:AdminsampleComponent},
+  {path:'admin/sample', component:AdminsampleComponent,canActivate:[AuthGuardGuard]},
   {path:'donor',component:DonarListComponent,canActivate:[AuthGuardGuard]},  
   {path:'sample/:id',component:SampleDetailComponent,canActivate:[AuthGuardGuard]},
   {path:'**' ,redirectTo:'/login',pathMatch:'full' }
