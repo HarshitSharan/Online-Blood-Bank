@@ -187,3 +187,10 @@ button:nth-child(2){
     height:40%;
     margin-right: 20%;
 }
+#close
+{
+    width:50px;
+    background-color: red;
+    margin-top: 10px;
+    margin-left: 10px;
+}

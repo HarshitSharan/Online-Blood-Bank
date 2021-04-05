@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalConstants } from '../common/global';
 
 @Component({
   selector: 'app-donor-form',
@@ -15,9 +16,9 @@ export class DonorFormComponent implements OnInit {
  sendData()
  {
    console.log(this.donorObj);
-   this.http.post("http://localhost:8080/admin/addDonor",this.donorObj).subscribe(data=>console.log(data))
-    console.log("send obj")
-   this.route.navigateByUrl("/admin/donor")
+   this.http.post(GlobalConstants.apiPrefix+"admin/addDonor",this.donorObj).subscribe(data=>console.log(data))
+    //console.log("send obj")
+   this.route.navigateByUrl("admin/dashboard")
 
  }
   ngOnInit(): void {

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalConstants } from '../common/global';
 
 @Component({
   selector: 'app-sample-form',
@@ -25,9 +26,9 @@ export class SampleFormComponent implements OnInit {
 
   sendData()
   {
-    this.http.post('http://localhost:8080/admin/addSample',this.sampleObj).subscribe((data)=>console.log(data))
-    //this.route.navigateByUrl('admin/dashboard')
-    console.log(this.sampleObj)
+    this.http.post(GlobalConstants.apiPrefix+'admin/addSample',this.sampleObj).subscribe((data)=>console.log(data))
+    this.route.navigateByUrl('admin/dashboard')
+   // console.log(this.sampleObj)
   }
   cancel()
   {

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { StatusReportService } from '../status-report.service';
 import { LoginService } from '../login.service';
+import { GlobalConstants } from '../common/global';
 @Component({
   selector: 'login-detail',
   templateUrl: './login-detail.component.html',
@@ -19,7 +20,7 @@ export class LoginDetailComponent implements OnInit {
 
   sendData()
   {
-     this.http.post("http://localhost:8080/login", this.loginObj ).subscribe((data)=>
+     this.http.post(GlobalConstants.apiPrefix+"login", this.loginObj ).subscribe((data)=>
     {
       if(data)
       {

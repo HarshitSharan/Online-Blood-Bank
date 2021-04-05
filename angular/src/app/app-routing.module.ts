@@ -20,7 +20,8 @@ const routes: Routes = [
   {path:'admin/addSample',component:SampleFormComponent},
   {path:'signup', component: MainSignupComponent},  
   {path:'admin/dashboard',component:UserDashboardComponent,canActivate:[AuthGuardGuard]},
-  {path:'user/dashboard',component:UserDashboardComponent},
+
+  {path:'user/dashboard',component:UserDashboardComponent,canActivate:[AuthGuardGuard]},
   {path:'sample/:id',component:SampleDetailComponent},
   {path:'admin/addDonor',component:DonorFormComponent},
   {path:'donor/:group',component:DonarDetailComponent,canActivate:[AuthGuardGuard]},

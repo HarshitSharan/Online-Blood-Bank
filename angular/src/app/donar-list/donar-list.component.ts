@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalConstants } from '../common/global';
 
 @Component({
   selector: 'app-donar-list',
@@ -39,7 +40,7 @@ export class DonarListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     this.http.get('http://localhost:8080/donor').subscribe((data)=>{
+     this.http.get(GlobalConstants.apiPrefix+'/donor').subscribe((data)=>{
      this.donarList=data
      this.temp=data
      })

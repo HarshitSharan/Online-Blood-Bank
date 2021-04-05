@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
+import { GlobalConstants } from './common/global';
 
 @Injectable({
   providedIn: 'root'
@@ -28,30 +29,26 @@ export class LoginService {
       return false;
     }
   }
-   changeState(userid:string='')
+   changeState(userid:string)
   {
       
-      if(  localStorage.getItem('userId'))
-      {
-
-        console.log("if")
-        this.username='';
-        this.state=false;
-         localStorage.removeItem('userId');
-      }
-      else
-      {
         console.log("else")
        localStorage.setItem('userId',userid)
         this.username=userid;
         this.state=true;
-      }
+        
+  }
+  logout()
+  {
+    this.username='';
+    this.state=false;
+    localStorage.removeItem('userId');
   }
   requestData(userId:any='') :Observable<any>
   {
     if(!userId)
       userId=localStorage.getItem('userId');
-    return this.http.get('http://localhost:8080/UserDetails/'+userId);
+    return this.http.get(GlobalConstants.apiPrefix+'UserDetails/'+userId);
   }
 
 }
