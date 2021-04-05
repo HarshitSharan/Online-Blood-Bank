@@ -3,6 +3,8 @@ package com.example.tests;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.example.controller.LoginController;
 import com.example.model.LoginModel;
@@ -13,6 +15,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -36,12 +40,13 @@ public class LoginTest {
 
         UserModel userOne=new UserModel();
         UserModel userTwo=new UserModel();
+        PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
 
         userOne.setEmail("anuraag@gmail.com");
-        userOne.setPassword("abcd");
+        userOne.setPassword(passwordEncoder.encode("abcd"));
 
         userTwo.setEmail("harshit@gmail.com");
-        userTwo.setPassword("5678");
+        userTwo.setPassword(passwordEncoder.encode("5678"));
 
 
         when(userRepo.findAll()).thenReturn(List.of(userOne,userTwo));
